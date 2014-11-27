@@ -1,0 +1,21 @@
+#ifndef DEFINITIONS_H_
+#define DEFINITIONS_H_
+
+#include "stm32f10x.h"
+
+#define R2D 	57.295779513082320876798154814105f						//180/PI
+#define D2R 	0.017453292519943295769236907684886f					//PI/180
+#define M_PI	3.141592653589793f					//3.14159265358979323846
+#define M_TWOPI	1.570796326794897f					//6.28318530717958647692
+
+#ifndef BIT
+#define BIT(x)	(1 << (x))
+#endif
+
+#define IO_REDIRECT_USART 		1
+#define IO_REDIRECT_MAX7456		2
+extern uint8_t io_redirect;
+
+#define STM32_DELAY_US_MULT         12
+
+#endif /* DEFINITIONS_H_ */
