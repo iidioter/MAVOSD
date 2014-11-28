@@ -1,341 +1,0 @@
-Dependencies for Project 'STM32F103OSD', Target 'Target 1': (DO NOT MODIFY !)
-F (.\CORE\core_cm3.c)(0x4C0C587E)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -W -O0 --apcs=interwork -I.\CORE -I.\STM32F10x_FWLib\inc -I.\MAVLINK -I.\MAVLINK\include\mavlink\v1.0 -I.\MAVLINK\include\mavlink\v1.0\ardupilotmega -I.\MAVLINK\include\mavlink\v1.0\common -I.\USER-I G:\Proj\STM32F103OSD\RTE-I d:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I d:\Keil_v5\ARM\CMSIS\Include-DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\core_cm3.o --omf_browse .\objects\core_cm3.crf --depend .\objects\core_cm3.d)
-I (d:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x54199D7A)
-F (.\CORE\startup_stm32f10x_md.s)(0x5405C08C)(--cpu Cortex-M3 -g --apcs=interwork --pd "__MICROLIB SETA 1"-I G:\Proj\STM32F103OSD\RTE-I d:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I d:\Keil_v5\ARM\CMSIS\Include--pd "STM32F10X_MD SETA 1"--list .\listings\startup_stm32f10x_md.lst --xref -o .\objects\startup_stm32f10x_md.o --depend .\objects\startup_stm32f10x_md.d)
-F (.\STM32F10x_FWLib\src\misc.c)(0x4D783BB4)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -W -O0 --apcs=interwork -I.\CORE -I.\STM32F10x_FWLib\inc -I.\MAVLINK -I.\MAVLINK\include\mavlink\v1.0 -I.\MAVLINK\include\mavlink\v1.0\ardupilotmega -I.\MAVLINK\include\mavlink\v1.0\common -I.\USER-I G:\Proj\STM32F103OSD\RTE-I d:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I d:\Keil_v5\ARM\CMSIS\Include-DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\misc.o --omf_browse .\objects\misc.crf --depend .\objects\misc.d)
-I (.\STM32F10x_FWLib\inc\misc.h)(0x4D783BB4)
-I (.\USER\stm32f10x.h)(0x4D783CB4)
-I (.\CORE\core_cm3.h)(0x4D523B58)
-I (d:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x54199D7A)
-I (.\USER\system_stm32f10x.h)(0x4D783CAA)
-I (.\USER\stm32f10x_conf.h)(0x5461C641)
-I (.\STM32F10x_FWLib\inc\stm32f10x_dbgmcu.h)(0x4D783BB4)
-I (.\STM32F10x_FWLib\inc\stm32f10x_gpio.h)(0x5470A82B)
-I (.\STM32F10x_FWLib\inc\stm32f10x_rcc.h)(0x4D783BB4)
-I (.\STM32F10x_FWLib\inc\stm32f10x_spi.h)(0x4D783BB4)
-I (.\STM32F10x_FWLib\inc\stm32f10x_usart.h)(0x5051A0AE)
-F (.\STM32F10x_FWLib\src\stm32f10x_gpio.c)(0x5470A80D)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -W -O0 --apcs=interwork -I.\CORE -I.\STM32F10x_FWLib\inc -I.\MAVLINK -I.\MAVLINK\include\mavlink\v1.0 -I.\MAVLINK\include\mavlink\v1.0\ardupilotmega -I.\MAVLINK\include\mavlink\v1.0\common -I.\USER-I G:\Proj\STM32F103OSD\RTE-I d:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I d:\Keil_v5\ARM\CMSIS\Include-DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\stm32f10x_gpio.o --omf_browse .\objects\stm32f10x_gpio.crf --depend .\objects\stm32f10x_gpio.d)
-I (.\STM32F10x_FWLib\inc\stm32f10x_gpio.h)(0x5470A82B)
-I (.\USER\stm32f10x.h)(0x4D783CB4)
-I (.\CORE\core_cm3.h)(0x4D523B58)
-I (d:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x54199D7A)
-I (.\USER\system_stm32f10x.h)(0x4D783CAA)
-I (.\USER\stm32f10x_conf.h)(0x5461C641)
-I (.\STM32F10x_FWLib\inc\stm32f10x_dbgmcu.h)(0x4D783BB4)
-I (.\STM32F10x_FWLib\inc\stm32f10x_rcc.h)(0x4D783BB4)
-I (.\STM32F10x_FWLib\inc\stm32f10x_spi.h)(0x4D783BB4)
-I (.\STM32F10x_FWLib\inc\stm32f10x_usart.h)(0x5051A0AE)
-I (.\STM32F10x_FWLib\inc\misc.h)(0x4D783BB4)
-F (.\STM32F10x_FWLib\src\stm32f10x_rcc.c)(0x4D783BB4)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -W -O0 --apcs=interwork -I.\CORE -I.\STM32F10x_FWLib\inc -I.\MAVLINK -I.\MAVLINK\include\mavlink\v1.0 -I.\MAVLINK\include\mavlink\v1.0\ardupilotmega -I.\MAVLINK\include\mavlink\v1.0\common -I.\USER-I G:\Proj\STM32F103OSD\RTE-I d:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I d:\Keil_v5\ARM\CMSIS\Include-DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\stm32f10x_rcc.o --omf_browse .\objects\stm32f10x_rcc.crf --depend .\objects\stm32f10x_rcc.d)
-I (.\STM32F10x_FWLib\inc\stm32f10x_rcc.h)(0x4D783BB4)
-I (.\USER\stm32f10x.h)(0x4D783CB4)
-I (.\CORE\core_cm3.h)(0x4D523B58)
-I (d:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x54199D7A)
-I (.\USER\system_stm32f10x.h)(0x4D783CAA)
-I (.\USER\stm32f10x_conf.h)(0x5461C641)
-I (.\STM32F10x_FWLib\inc\stm32f10x_dbgmcu.h)(0x4D783BB4)
-I (.\STM32F10x_FWLib\inc\stm32f10x_gpio.h)(0x5470A82B)
-I (.\STM32F10x_FWLib\inc\stm32f10x_spi.h)(0x4D783BB4)
-I (.\STM32F10x_FWLib\inc\stm32f10x_usart.h)(0x5051A0AE)
-I (.\STM32F10x_FWLib\inc\misc.h)(0x4D783BB4)
-F (.\STM32F10x_FWLib\src\stm32f10x_usart.c)(0x5461CB65)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -W -O0 --apcs=interwork -I.\CORE -I.\STM32F10x_FWLib\inc -I.\MAVLINK -I.\MAVLINK\include\mavlink\v1.0 -I.\MAVLINK\include\mavlink\v1.0\ardupilotmega -I.\MAVLINK\include\mavlink\v1.0\common -I.\USER-I G:\Proj\STM32F103OSD\RTE-I d:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I d:\Keil_v5\ARM\CMSIS\Include-DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\stm32f10x_usart.o --omf_browse .\objects\stm32f10x_usart.crf --depend .\objects\stm32f10x_usart.d)
-I (.\STM32F10x_FWLib\inc\stm32f10x_usart.h)(0x5051A0AE)
-I (.\USER\stm32f10x.h)(0x4D783CB4)
-I (.\CORE\core_cm3.h)(0x4D523B58)
-I (d:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x54199D7A)
-I (.\USER\system_stm32f10x.h)(0x4D783CAA)
-I (.\USER\stm32f10x_conf.h)(0x5461C641)
-I (.\STM32F10x_FWLib\inc\stm32f10x_dbgmcu.h)(0x4D783BB4)
-I (.\STM32F10x_FWLib\inc\stm32f10x_gpio.h)(0x5470A82B)
-I (.\STM32F10x_FWLib\inc\stm32f10x_rcc.h)(0x4D783BB4)
-I (.\STM32F10x_FWLib\inc\stm32f10x_spi.h)(0x4D783BB4)
-I (.\STM32F10x_FWLib\inc\misc.h)(0x4D783BB4)
-F (.\STM32F10x_FWLib\src\stm32f10x_spi.c)(0x4D783BB4)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -W -O0 --apcs=interwork -I.\CORE -I.\STM32F10x_FWLib\inc -I.\MAVLINK -I.\MAVLINK\include\mavlink\v1.0 -I.\MAVLINK\include\mavlink\v1.0\ardupilotmega -I.\MAVLINK\include\mavlink\v1.0\common -I.\USER-I G:\Proj\STM32F103OSD\RTE-I d:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I d:\Keil_v5\ARM\CMSIS\Include-DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\stm32f10x_spi.o --omf_browse .\objects\stm32f10x_spi.crf --depend .\objects\stm32f10x_spi.d)
-I (.\STM32F10x_FWLib\inc\stm32f10x_spi.h)(0x4D783BB4)
-I (.\USER\stm32f10x.h)(0x4D783CB4)
-I (.\CORE\core_cm3.h)(0x4D523B58)
-I (d:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x54199D7A)
-I (.\USER\system_stm32f10x.h)(0x4D783CAA)
-I (.\USER\stm32f10x_conf.h)(0x5461C641)
-I (.\STM32F10x_FWLib\inc\stm32f10x_dbgmcu.h)(0x4D783BB4)
-I (.\STM32F10x_FWLib\inc\stm32f10x_gpio.h)(0x5470A82B)
-I (.\STM32F10x_FWLib\inc\stm32f10x_rcc.h)(0x4D783BB4)
-I (.\STM32F10x_FWLib\inc\stm32f10x_usart.h)(0x5051A0AE)
-I (.\STM32F10x_FWLib\inc\misc.h)(0x4D783BB4)
-F (.\USER\main.c)(0x547439B3)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -W -O0 --apcs=interwork -I.\CORE -I.\STM32F10x_FWLib\inc -I.\MAVLINK -I.\MAVLINK\include\mavlink\v1.0 -I.\MAVLINK\include\mavlink\v1.0\ardupilotmega -I.\MAVLINK\include\mavlink\v1.0\common -I.\USER-I G:\Proj\STM32F103OSD\RTE-I d:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I d:\Keil_v5\ARM\CMSIS\Include-DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
-I (d:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x54199D7C)
-I (USER\definitions.h)(0x547150A6)
-I (USER\stm32f10x.h)(0x4D783CB4)
-I (.\CORE\core_cm3.h)(0x4D523B58)
-I (d:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x54199D7A)
-I (USER\system_stm32f10x.h)(0x4D783CAA)
-I (USER\stm32f10x_conf.h)(0x5461C641)
-I (.\STM32F10x_FWLib\inc\stm32f10x_dbgmcu.h)(0x4D783BB4)
-I (.\USER\stm32f10x.h)(0x4D783CB4)
-I (.\STM32F10x_FWLib\inc\stm32f10x_gpio.h)(0x5470A82B)
-I (.\STM32F10x_FWLib\inc\stm32f10x_rcc.h)(0x4D783BB4)
-I (.\STM32F10x_FWLib\inc\stm32f10x_spi.h)(0x4D783BB4)
-I (.\STM32F10x_FWLib\inc\stm32f10x_usart.h)(0x5051A0AE)
-I (.\STM32F10x_FWLib\inc\misc.h)(0x4D783BB4)
-I (USER\systick.h)(0x5470A656)
-I (USER\utils.h)(0x5472B443)
-I (USER\pins.h)(0x547149AD)
-I (USER\max7456.h)(0x547298A8)
-I (USER\usart.h)(0x5472A3D5)
-F (.\USER\stm32f10x_it.c)(0x5470A99E)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -W -O0 --apcs=interwork -I.\CORE -I.\STM32F10x_FWLib\inc -I.\MAVLINK -I.\MAVLINK\include\mavlink\v1.0 -I.\MAVLINK\include\mavlink\v1.0\ardupilotmega -I.\MAVLINK\include\mavlink\v1.0\common -I.\USER-I G:\Proj\STM32F103OSD\RTE-I d:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I d:\Keil_v5\ARM\CMSIS\Include-DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\stm32f10x_it.o --omf_browse .\objects\stm32f10x_it.crf --depend .\objects\stm32f10x_it.d)
-I (USER\stm32f10x_it.h)(0x4D99A426)
-I (USER\stm32f10x.h)(0x4D783CB4)
-I (.\CORE\core_cm3.h)(0x4D523B58)
-I (d:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x54199D7A)
-I (USER\system_stm32f10x.h)(0x4D783CAA)
-I (USER\stm32f10x_conf.h)(0x5461C641)
-I (.\STM32F10x_FWLib\inc\stm32f10x_dbgmcu.h)(0x4D783BB4)
-I (.\USER\stm32f10x.h)(0x4D783CB4)
-I (.\STM32F10x_FWLib\inc\stm32f10x_gpio.h)(0x5470A82B)
-I (.\STM32F10x_FWLib\inc\stm32f10x_rcc.h)(0x4D783BB4)
-I (.\STM32F10x_FWLib\inc\stm32f10x_spi.h)(0x4D783BB4)
-I (.\STM32F10x_FWLib\inc\stm32f10x_usart.h)(0x5051A0AE)
-I (.\STM32F10x_FWLib\inc\misc.h)(0x4D783BB4)
-F (.\USER\system_stm32f10x.c)(0x4D99A426)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -W -O0 --apcs=interwork -I.\CORE -I.\STM32F10x_FWLib\inc -I.\MAVLINK -I.\MAVLINK\include\mavlink\v1.0 -I.\MAVLINK\include\mavlink\v1.0\ardupilotmega -I.\MAVLINK\include\mavlink\v1.0\common -I.\USER-I G:\Proj\STM32F103OSD\RTE-I d:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I d:\Keil_v5\ARM\CMSIS\Include-DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\system_stm32f10x.o --omf_browse .\objects\system_stm32f10x.crf --depend .\objects\system_stm32f10x.d)
-I (USER\stm32f10x.h)(0x4D783CB4)
-I (.\CORE\core_cm3.h)(0x4D523B58)
-I (d:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x54199D7A)
-I (USER\system_stm32f10x.h)(0x4D783CAA)
-I (USER\stm32f10x_conf.h)(0x5461C641)
-I (.\STM32F10x_FWLib\inc\stm32f10x_dbgmcu.h)(0x4D783BB4)
-I (.\USER\stm32f10x.h)(0x4D783CB4)
-I (.\STM32F10x_FWLib\inc\stm32f10x_gpio.h)(0x5470A82B)
-I (.\STM32F10x_FWLib\inc\stm32f10x_rcc.h)(0x4D783BB4)
-I (.\STM32F10x_FWLib\inc\stm32f10x_spi.h)(0x4D783BB4)
-I (.\STM32F10x_FWLib\inc\stm32f10x_usart.h)(0x5051A0AE)
-I (.\STM32F10x_FWLib\inc\misc.h)(0x4D783BB4)
-F (.\USER\pins.c)(0x5472ABE3)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -W -O0 --apcs=interwork -I.\CORE -I.\STM32F10x_FWLib\inc -I.\MAVLINK -I.\MAVLINK\include\mavlink\v1.0 -I.\MAVLINK\include\mavlink\v1.0\ardupilotmega -I.\MAVLINK\include\mavlink\v1.0\common -I.\USER-I G:\Proj\STM32F103OSD\RTE-I d:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I d:\Keil_v5\ARM\CMSIS\Include-DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\pins.o --omf_browse .\objects\pins.crf --depend .\objects\pins.d)
-I (USER\pins.h)(0x547149AD)
-I (USER\stm32f10x.h)(0x4D783CB4)
-I (.\CORE\core_cm3.h)(0x4D523B58)
-I (d:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x54199D7A)
-I (USER\system_stm32f10x.h)(0x4D783CAA)
-I (USER\stm32f10x_conf.h)(0x5461C641)
-I (.\STM32F10x_FWLib\inc\stm32f10x_dbgmcu.h)(0x4D783BB4)
-I (.\USER\stm32f10x.h)(0x4D783CB4)
-I (.\STM32F10x_FWLib\inc\stm32f10x_gpio.h)(0x5470A82B)
-I (.\STM32F10x_FWLib\inc\stm32f10x_rcc.h)(0x4D783BB4)
-I (.\STM32F10x_FWLib\inc\stm32f10x_spi.h)(0x4D783BB4)
-I (.\STM32F10x_FWLib\inc\stm32f10x_usart.h)(0x5051A0AE)
-I (.\STM32F10x_FWLib\inc\misc.h)(0x4D783BB4)
-I (USER\utils.h)(0x5472B443)
-F (.\USER\systick.c)(0x5470A5CC)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -W -O0 --apcs=interwork -I.\CORE -I.\STM32F10x_FWLib\inc -I.\MAVLINK -I.\MAVLINK\include\mavlink\v1.0 -I.\MAVLINK\include\mavlink\v1.0\ardupilotmega -I.\MAVLINK\include\mavlink\v1.0\common -I.\USER-I G:\Proj\STM32F103OSD\RTE-I d:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I d:\Keil_v5\ARM\CMSIS\Include-DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\systick.o --omf_browse .\objects\systick.crf --depend .\objects\systick.d)
-I (.\STM32F10x_FWLib\inc\stm32f10x_tim.h)(0x4D783BB4)
-I (.\USER\stm32f10x.h)(0x4D783CB4)
-I (.\CORE\core_cm3.h)(0x4D523B58)
-I (d:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x54199D7A)
-I (.\USER\system_stm32f10x.h)(0x4D783CAA)
-I (.\USER\stm32f10x_conf.h)(0x5461C641)
-I (.\STM32F10x_FWLib\inc\stm32f10x_dbgmcu.h)(0x4D783BB4)
-I (.\STM32F10x_FWLib\inc\stm32f10x_gpio.h)(0x5470A82B)
-I (.\STM32F10x_FWLib\inc\stm32f10x_rcc.h)(0x4D783BB4)
-I (.\STM32F10x_FWLib\inc\stm32f10x_spi.h)(0x4D783BB4)
-I (.\STM32F10x_FWLib\inc\stm32f10x_usart.h)(0x5051A0AE)
-I (.\STM32F10x_FWLib\inc\misc.h)(0x4D783BB4)
-F (.\USER\utils.c)(0x54714D97)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -W -O0 --apcs=interwork -I.\CORE -I.\STM32F10x_FWLib\inc -I.\MAVLINK -I.\MAVLINK\include\mavlink\v1.0 -I.\MAVLINK\include\mavlink\v1.0\ardupilotmega -I.\MAVLINK\include\mavlink\v1.0\common -I.\USER-I G:\Proj\STM32F103OSD\RTE-I d:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I d:\Keil_v5\ARM\CMSIS\Include-DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\utils.o --omf_browse .\objects\utils.crf --depend .\objects\utils.d)
-I (d:\Keil_v5\ARM\ARMCC\include\math.h)(0x54199D7A)
-I (USER\utils.h)(0x5472B443)
-I (USER\pins.h)(0x547149AD)
-I (USER\definitions.h)(0x547150A6)
-I (USER\stm32f10x.h)(0x4D783CB4)
-I (.\CORE\core_cm3.h)(0x4D523B58)
-I (d:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x54199D7A)
-I (USER\system_stm32f10x.h)(0x4D783CAA)
-I (USER\stm32f10x_conf.h)(0x5461C641)
-I (.\STM32F10x_FWLib\inc\stm32f10x_dbgmcu.h)(0x4D783BB4)
-I (.\USER\stm32f10x.h)(0x4D783CB4)
-I (.\STM32F10x_FWLib\inc\stm32f10x_gpio.h)(0x5470A82B)
-I (.\STM32F10x_FWLib\inc\stm32f10x_rcc.h)(0x4D783BB4)
-I (.\STM32F10x_FWLib\inc\stm32f10x_spi.h)(0x4D783BB4)
-I (.\STM32F10x_FWLib\inc\stm32f10x_usart.h)(0x5051A0AE)
-I (.\STM32F10x_FWLib\inc\misc.h)(0x4D783BB4)
-F (.\USER\spi.c)(0x54714E69)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -W -O0 --apcs=interwork -I.\CORE -I.\STM32F10x_FWLib\inc -I.\MAVLINK -I.\MAVLINK\include\mavlink\v1.0 -I.\MAVLINK\include\mavlink\v1.0\ardupilotmega -I.\MAVLINK\include\mavlink\v1.0\common -I.\USER-I G:\Proj\STM32F103OSD\RTE-I d:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I d:\Keil_v5\ARM\CMSIS\Include-DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\spi.o --omf_browse .\objects\spi.crf --depend .\objects\spi.d)
-I (USER\spi.h)(0x5470AFCC)
-I (USER\definitions.h)(0x547150A6)
-I (USER\stm32f10x.h)(0x4D783CB4)
-I (.\CORE\core_cm3.h)(0x4D523B58)
-I (d:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x54199D7A)
-I (USER\system_stm32f10x.h)(0x4D783CAA)
-I (USER\stm32f10x_conf.h)(0x5461C641)
-I (.\STM32F10x_FWLib\inc\stm32f10x_dbgmcu.h)(0x4D783BB4)
-I (.\USER\stm32f10x.h)(0x4D783CB4)
-I (.\STM32F10x_FWLib\inc\stm32f10x_gpio.h)(0x5470A82B)
-I (.\STM32F10x_FWLib\inc\stm32f10x_rcc.h)(0x4D783BB4)
-I (.\STM32F10x_FWLib\inc\stm32f10x_spi.h)(0x4D783BB4)
-I (.\STM32F10x_FWLib\inc\stm32f10x_usart.h)(0x5051A0AE)
-I (.\STM32F10x_FWLib\inc\misc.h)(0x4D783BB4)
-F (.\USER\max7456.c)(0x547439AB)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -W -O0 --apcs=interwork -I.\CORE -I.\STM32F10x_FWLib\inc -I.\MAVLINK -I.\MAVLINK\include\mavlink\v1.0 -I.\MAVLINK\include\mavlink\v1.0\ardupilotmega -I.\MAVLINK\include\mavlink\v1.0\common -I.\USER-I G:\Proj\STM32F103OSD\RTE-I d:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I d:\Keil_v5\ARM\CMSIS\Include-DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\max7456.o --omf_browse .\objects\max7456.crf --depend .\objects\max7456.d)
-I (USER\max7456.h)(0x547298A8)
-I (USER\definitions.h)(0x547150A6)
-I (USER\stm32f10x.h)(0x4D783CB4)
-I (.\CORE\core_cm3.h)(0x4D523B58)
-I (d:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x54199D7A)
-I (USER\system_stm32f10x.h)(0x4D783CAA)
-I (USER\stm32f10x_conf.h)(0x5461C641)
-I (.\STM32F10x_FWLib\inc\stm32f10x_dbgmcu.h)(0x4D783BB4)
-I (.\USER\stm32f10x.h)(0x4D783CB4)
-I (.\STM32F10x_FWLib\inc\stm32f10x_gpio.h)(0x5470A82B)
-I (.\STM32F10x_FWLib\inc\stm32f10x_rcc.h)(0x4D783BB4)
-I (.\STM32F10x_FWLib\inc\stm32f10x_spi.h)(0x4D783BB4)
-I (.\STM32F10x_FWLib\inc\stm32f10x_usart.h)(0x5051A0AE)
-I (.\STM32F10x_FWLib\inc\misc.h)(0x4D783BB4)
-I (USER\spi.h)(0x5470AFCC)
-I (USER\utils.h)(0x5472B443)
-F (.\USER\usart.c)(0x5472B414)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -W -O0 --apcs=interwork -I.\CORE -I.\STM32F10x_FWLib\inc -I.\MAVLINK -I.\MAVLINK\include\mavlink\v1.0 -I.\MAVLINK\include\mavlink\v1.0\ardupilotmega -I.\MAVLINK\include\mavlink\v1.0\common -I.\USER-I G:\Proj\STM32F103OSD\RTE-I d:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I d:\Keil_v5\ARM\CMSIS\Include-DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\usart.o --omf_browse .\objects\usart.crf --depend .\objects\usart.d)
-I (USER\usart.h)(0x5472A3D5)
-I (USER\definitions.h)(0x547150A6)
-I (USER\stm32f10x.h)(0x4D783CB4)
-I (.\CORE\core_cm3.h)(0x4D523B58)
-I (d:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x54199D7A)
-I (USER\system_stm32f10x.h)(0x4D783CAA)
-I (USER\stm32f10x_conf.h)(0x5461C641)
-I (.\STM32F10x_FWLib\inc\stm32f10x_dbgmcu.h)(0x4D783BB4)
-I (.\USER\stm32f10x.h)(0x4D783CB4)
-I (.\STM32F10x_FWLib\inc\stm32f10x_gpio.h)(0x5470A82B)
-I (.\STM32F10x_FWLib\inc\stm32f10x_rcc.h)(0x4D783BB4)
-I (.\STM32F10x_FWLib\inc\stm32f10x_spi.h)(0x4D783BB4)
-I (.\STM32F10x_FWLib\inc\stm32f10x_usart.h)(0x5051A0AE)
-I (.\STM32F10x_FWLib\inc\misc.h)(0x4D783BB4)
-F (.\USER\OSDMavlink.c)(0x54743E1C)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -W -O0 --apcs=interwork -I.\CORE -I.\STM32F10x_FWLib\inc -I.\MAVLINK -I.\MAVLINK\include\mavlink\v1.0 -I.\MAVLINK\include\mavlink\v1.0\ardupilotmega -I.\MAVLINK\include\mavlink\v1.0\common -I.\USER-I G:\Proj\STM32F103OSD\RTE-I d:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I d:\Keil_v5\ARM\CMSIS\Include-DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\osdmavlink.o --omf_browse .\objects\osdmavlink.crf --depend .\objects\osdmavlink.d)
-I (USER\OSDMavlink.h)(0x54743CC3)
-I (USER\definitions.h)(0x547150A6)
-I (USER\stm32f10x.h)(0x4D783CB4)
-I (.\CORE\core_cm3.h)(0x4D523B58)
-I (d:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x54199D7A)
-I (USER\system_stm32f10x.h)(0x4D783CAA)
-I (USER\stm32f10x_conf.h)(0x5461C641)
-I (.\STM32F10x_FWLib\inc\stm32f10x_dbgmcu.h)(0x4D783BB4)
-I (.\USER\stm32f10x.h)(0x4D783CB4)
-I (.\STM32F10x_FWLib\inc\stm32f10x_gpio.h)(0x5470A82B)
-I (.\STM32F10x_FWLib\inc\stm32f10x_rcc.h)(0x4D783BB4)
-I (.\STM32F10x_FWLib\inc\stm32f10x_spi.h)(0x4D783BB4)
-I (.\STM32F10x_FWLib\inc\stm32f10x_usart.h)(0x5051A0AE)
-I (.\STM32F10x_FWLib\inc\misc.h)(0x4D783BB4)
-I (USER\usart.h)(0x5472A3D5)
-I (.\MAVLINK\include/mavlink/v1.0/ardupilotmega/version.h)(0x526F3CF9)
-I (.\MAVLINK\include/mavlink/v1.0/mavlink_types.h)(0x526F3CF9)
-I (d:\Keil_v5\ARM\ARMCC\include\inttypes.h)(0x54199D7C)
-I (.\MAVLINK\include/mavlink/v1.0/ardupilotmega/mavlink.h)(0x526F3CF9)
-I (.\MAVLINK\include/mavlink/v1.0/ardupilotmega/ardupilotmega.h)(0x526F3CF9)
-I (.\MAVLINK\include/mavlink/v1.0/ardupilotmega/../protocol.h)(0x526F3CF9)
-I (d:\Keil_v5\ARM\ARMCC\include\string.h)(0x54199D7C)
-I (.\MAVLINK\include/mavlink/v1.0/ardupilotmega/../mavlink_helpers.h)(0x545C3B94)
-I (.\MAVLINK\include/mavlink/v1.0/ardupilotmega/../checksum.h)(0x54743D55)
-I (.\MAVLINK\include/mavlink/v1.0/ardupilotmega/../ardupilotmega/mavlink.h)(0x526F3CF9)
-I (.\MAVLINK\include/mavlink/v1.0/ardupilotmega/../common/common.h)(0x526F3CF9)
-I (.\MAVLINK\include/mavlink/v1.0/ardupilotmega/../common/./mavlink_msg_heartbeat.h)(0x526F3CF9)
-I (.\MAVLINK\include/mavlink/v1.0/ardupilotmega/../common/./mavlink_msg_sys_status.h)(0x526F3CF9)
-I (.\MAVLINK\include/mavlink/v1.0/ardupilotmega/../common/./mavlink_msg_system_time.h)(0x526F3CF9)
-I (.\MAVLINK\include/mavlink/v1.0/ardupilotmega/../common/./mavlink_msg_ping.h)(0x526F3CF9)
-I (.\MAVLINK\include/mavlink/v1.0/ardupilotmega/../common/./mavlink_msg_change_operator_control.h)(0x526F3CF9)
-I (.\MAVLINK\include/mavlink/v1.0/ardupilotmega/../common/./mavlink_msg_change_operator_control_ack.h)(0x526F3CF9)
-I (.\MAVLINK\include/mavlink/v1.0/ardupilotmega/../common/./mavlink_msg_auth_key.h)(0x526F3CF9)
-I (.\MAVLINK\include/mavlink/v1.0/ardupilotmega/../common/./mavlink_msg_set_mode.h)(0x526F3CF9)
-I (.\MAVLINK\include/mavlink/v1.0/ardupilotmega/../common/./mavlink_msg_param_request_read.h)(0x526F3CF9)
-I (.\MAVLINK\include/mavlink/v1.0/ardupilotmega/../common/./mavlink_msg_param_request_list.h)(0x526F3CF9)
-I (.\MAVLINK\include/mavlink/v1.0/ardupilotmega/../common/./mavlink_msg_param_value.h)(0x526F3CF9)
-I (.\MAVLINK\include/mavlink/v1.0/ardupilotmega/../common/./mavlink_msg_param_set.h)(0x526F3CF9)
-I (.\MAVLINK\include/mavlink/v1.0/ardupilotmega/../common/./mavlink_msg_gps_raw_int.h)(0x526F3CF9)
-I (.\MAVLINK\include/mavlink/v1.0/ardupilotmega/../common/./mavlink_msg_gps_status.h)(0x526F3CF9)
-I (.\MAVLINK\include/mavlink/v1.0/ardupilotmega/../common/./mavlink_msg_scaled_imu.h)(0x526F3CF9)
-I (.\MAVLINK\include/mavlink/v1.0/ardupilotmega/../common/./mavlink_msg_raw_imu.h)(0x526F3CF9)
-I (.\MAVLINK\include/mavlink/v1.0/ardupilotmega/../common/./mavlink_msg_raw_pressure.h)(0x526F3CF9)
-I (.\MAVLINK\include/mavlink/v1.0/ardupilotmega/../common/./mavlink_msg_scaled_pressure.h)(0x526F3CF9)
-I (.\MAVLINK\include/mavlink/v1.0/ardupilotmega/../common/./mavlink_msg_attitude.h)(0x526F3CF9)
-I (.\MAVLINK\include/mavlink/v1.0/ardupilotmega/../common/./mavlink_msg_attitude_quaternion.h)(0x526F3CF9)
-I (.\MAVLINK\include/mavlink/v1.0/ardupilotmega/../common/./mavlink_msg_local_position_ned.h)(0x526F3CF9)
-I (.\MAVLINK\include/mavlink/v1.0/ardupilotmega/../common/./mavlink_msg_global_position_int.h)(0x526F3CF9)
-I (.\MAVLINK\include/mavlink/v1.0/ardupilotmega/../common/./mavlink_msg_rc_channels_scaled.h)(0x526F3CF9)
-I (.\MAVLINK\include/mavlink/v1.0/ardupilotmega/../common/./mavlink_msg_rc_channels_raw.h)(0x526F3CF9)
-I (.\MAVLINK\include/mavlink/v1.0/ardupilotmega/../common/./mavlink_msg_servo_output_raw.h)(0x526F3CF9)
-I (.\MAVLINK\include/mavlink/v1.0/ardupilotmega/../common/./mavlink_msg_mission_request_partial_list.h)(0x526F3CF9)
-I (.\MAVLINK\include/mavlink/v1.0/ardupilotmega/../common/./mavlink_msg_mission_write_partial_list.h)(0x526F3CF9)
-I (.\MAVLINK\include/mavlink/v1.0/ardupilotmega/../common/./mavlink_msg_mission_item.h)(0x526F3CF9)
-I (.\MAVLINK\include/mavlink/v1.0/ardupilotmega/../common/./mavlink_msg_mission_request.h)(0x526F3CF9)
-I (.\MAVLINK\include/mavlink/v1.0/ardupilotmega/../common/./mavlink_msg_mission_set_current.h)(0x526F3CF9)
-I (.\MAVLINK\include/mavlink/v1.0/ardupilotmega/../common/./mavlink_msg_mission_current.h)(0x526F3CF9)
-I (.\MAVLINK\include/mavlink/v1.0/ardupilotmega/../common/./mavlink_msg_mission_request_list.h)(0x526F3CF9)
-I (.\MAVLINK\include/mavlink/v1.0/ardupilotmega/../common/./mavlink_msg_mission_count.h)(0x526F3CF9)
-I (.\MAVLINK\include/mavlink/v1.0/ardupilotmega/../common/./mavlink_msg_mission_clear_all.h)(0x526F3CF9)
-I (.\MAVLINK\include/mavlink/v1.0/ardupilotmega/../common/./mavlink_msg_mission_item_reached.h)(0x526F3CF9)
-I (.\MAVLINK\include/mavlink/v1.0/ardupilotmega/../common/./mavlink_msg_mission_ack.h)(0x526F3CF9)
-I (.\MAVLINK\include/mavlink/v1.0/ardupilotmega/../common/./mavlink_msg_set_gps_global_origin.h)(0x526F3CF9)
-I (.\MAVLINK\include/mavlink/v1.0/ardupilotmega/../common/./mavlink_msg_gps_global_origin.h)(0x526F3CF9)
-I (.\MAVLINK\include/mavlink/v1.0/ardupilotmega/../common/./mavlink_msg_set_local_position_setpoint.h)(0x526F3CF9)
-I (.\MAVLINK\include/mavlink/v1.0/ardupilotmega/../common/./mavlink_msg_local_position_setpoint.h)(0x526F3CF9)
-I (.\MAVLINK\include/mavlink/v1.0/ardupilotmega/../common/./mavlink_msg_global_position_setpoint_int.h)(0x526F3CF9)
-I (.\MAVLINK\include/mavlink/v1.0/ardupilotmega/../common/./mavlink_msg_set_global_position_setpoint_int.h)(0x526F3CF9)
-I (.\MAVLINK\include/mavlink/v1.0/ardupilotmega/../common/./mavlink_msg_safety_set_allowed_area.h)(0x526F3CF9)
-I (.\MAVLINK\include/mavlink/v1.0/ardupilotmega/../common/./mavlink_msg_safety_allowed_area.h)(0x526F3CF9)
-I (.\MAVLINK\include/mavlink/v1.0/ardupilotmega/../common/./mavlink_msg_set_roll_pitch_yaw_thrust.h)(0x526F3CF9)
-I (.\MAVLINK\include/mavlink/v1.0/ardupilotmega/../common/./mavlink_msg_set_roll_pitch_yaw_speed_thrust.h)(0x526F3CF9)
-I (.\MAVLINK\include/mavlink/v1.0/ardupilotmega/../common/./mavlink_msg_roll_pitch_yaw_thrust_setpoint.h)(0x526F3CF9)
-I (.\MAVLINK\include/mavlink/v1.0/ardupilotmega/../common/./mavlink_msg_roll_pitch_yaw_speed_thrust_setpoint.h)(0x526F3CF9)
-I (.\MAVLINK\include/mavlink/v1.0/ardupilotmega/../common/./mavlink_msg_set_quad_motors_setpoint.h)(0x526F3CF9)
-I (.\MAVLINK\include/mavlink/v1.0/ardupilotmega/../common/./mavlink_msg_set_quad_swarm_roll_pitch_yaw_thrust.h)(0x526F3CF9)
-I (.\MAVLINK\include/mavlink/v1.0/ardupilotmega/../common/./mavlink_msg_nav_controller_output.h)(0x526F3CF9)
-I (.\MAVLINK\include/mavlink/v1.0/ardupilotmega/../common/./mavlink_msg_set_quad_swarm_led_roll_pitch_yaw_thrust.h)(0x526F3CF9)
-I (.\MAVLINK\include/mavlink/v1.0/ardupilotmega/../common/./mavlink_msg_state_correction.h)(0x526F3CF9)
-I (.\MAVLINK\include/mavlink/v1.0/ardupilotmega/../common/./mavlink_msg_request_data_stream.h)(0x545C577D)
-I (.\MAVLINK\include/mavlink/v1.0/ardupilotmega/../common/./mavlink_msg_data_stream.h)(0x526F3CF9)
-I (.\MAVLINK\include/mavlink/v1.0/ardupilotmega/../common/./mavlink_msg_manual_control.h)(0x526F3CF9)
-I (.\MAVLINK\include/mavlink/v1.0/ardupilotmega/../common/./mavlink_msg_rc_channels_override.h)(0x526F3CF9)
-I (.\MAVLINK\include/mavlink/v1.0/ardupilotmega/../common/./mavlink_msg_vfr_hud.h)(0x526F3CF9)
-I (.\MAVLINK\include/mavlink/v1.0/ardupilotmega/../common/./mavlink_msg_command_long.h)(0x526F3CF9)
-I (.\MAVLINK\include/mavlink/v1.0/ardupilotmega/../common/./mavlink_msg_command_ack.h)(0x526F3CF9)
-I (.\MAVLINK\include/mavlink/v1.0/ardupilotmega/../common/./mavlink_msg_local_position_ned_system_global_offset.h)(0x526F3CF9)
-I (.\MAVLINK\include/mavlink/v1.0/ardupilotmega/../common/./mavlink_msg_hil_state.h)(0x526F3CF9)
-I (.\MAVLINK\include/mavlink/v1.0/ardupilotmega/../common/./mavlink_msg_hil_controls.h)(0x526F3CF9)
-I (.\MAVLINK\include/mavlink/v1.0/ardupilotmega/../common/./mavlink_msg_hil_rc_inputs_raw.h)(0x526F3CF9)
-I (.\MAVLINK\include/mavlink/v1.0/ardupilotmega/../common/./mavlink_msg_optical_flow.h)(0x526F3CF9)
-I (.\MAVLINK\include/mavlink/v1.0/ardupilotmega/../common/./mavlink_msg_global_vision_position_estimate.h)(0x526F3CF9)
-I (.\MAVLINK\include/mavlink/v1.0/ardupilotmega/../common/./mavlink_msg_vision_position_estimate.h)(0x526F3CF9)
-I (.\MAVLINK\include/mavlink/v1.0/ardupilotmega/../common/./mavlink_msg_vision_speed_estimate.h)(0x526F3CF9)
-I (.\MAVLINK\include/mavlink/v1.0/ardupilotmega/../common/./mavlink_msg_vicon_position_estimate.h)(0x526F3CF9)
-I (.\MAVLINK\include/mavlink/v1.0/ardupilotmega/../common/./mavlink_msg_memory_vect.h)(0x526F3CF9)
-I (.\MAVLINK\include/mavlink/v1.0/ardupilotmega/../common/./mavlink_msg_debug_vect.h)(0x526F3CF9)
-I (.\MAVLINK\include/mavlink/v1.0/ardupilotmega/../common/./mavlink_msg_named_value_float.h)(0x526F3CF9)
-I (.\MAVLINK\include/mavlink/v1.0/ardupilotmega/../common/./mavlink_msg_named_value_int.h)(0x526F3CF9)
-I (.\MAVLINK\include/mavlink/v1.0/ardupilotmega/../common/./mavlink_msg_statustext.h)(0x526F3CF9)
-I (.\MAVLINK\include/mavlink/v1.0/ardupilotmega/../common/./mavlink_msg_debug.h)(0x526F3CF9)
-I (.\MAVLINK\include/mavlink/v1.0/ardupilotmega/./mavlink_msg_sensor_offsets.h)(0x526F3CF9)
-I (.\MAVLINK\include/mavlink/v1.0/ardupilotmega/./mavlink_msg_set_mag_offsets.h)(0x526F3CF9)
-I (.\MAVLINK\include/mavlink/v1.0/ardupilotmega/./mavlink_msg_meminfo.h)(0x526F3CF9)
-I (.\MAVLINK\include/mavlink/v1.0/ardupilotmega/./mavlink_msg_ap_adc.h)(0x526F3CF9)
-I (.\MAVLINK\include/mavlink/v1.0/ardupilotmega/./mavlink_msg_digicam_configure.h)(0x526F3CF9)
-I (.\MAVLINK\include/mavlink/v1.0/ardupilotmega/./mavlink_msg_digicam_control.h)(0x526F3CF9)
-I (.\MAVLINK\include/mavlink/v1.0/ardupilotmega/./mavlink_msg_mount_configure.h)(0x526F3CF9)
-I (.\MAVLINK\include/mavlink/v1.0/ardupilotmega/./mavlink_msg_mount_control.h)(0x526F3CF9)
-I (.\MAVLINK\include/mavlink/v1.0/ardupilotmega/./mavlink_msg_mount_status.h)(0x526F3CF9)
-I (.\MAVLINK\include/mavlink/v1.0/ardupilotmega/./mavlink_msg_fence_point.h)(0x526F3CF9)
-I (.\MAVLINK\include/mavlink/v1.0/ardupilotmega/./mavlink_msg_fence_fetch_point.h)(0x526F3CF9)
-I (.\MAVLINK\include/mavlink/v1.0/ardupilotmega/./mavlink_msg_fence_status.h)(0x526F3CF9)
-I (.\MAVLINK\include/mavlink/v1.0/ardupilotmega/./mavlink_msg_ahrs.h)(0x526F3CF9)
-I (.\MAVLINK\include/mavlink/v1.0/ardupilotmega/./mavlink_msg_simstate.h)(0x526F3CF9)
-I (.\MAVLINK\include/mavlink/v1.0/ardupilotmega/./mavlink_msg_hwstatus.h)(0x526F3CF9)
-I (.\MAVLINK\include/mavlink/v1.0/ardupilotmega/./mavlink_msg_radio.h)(0x526F3CF9)
-I (.\MAVLINK\include/mavlink/v1.0/ardupilotmega/./mavlink_msg_limits_status.h)(0x526F3CF9)
-I (.\MAVLINK\include/mavlink/v1.0/ardupilotmega/./mavlink_msg_wind.h)(0x526F3CF9)
-I (USER\max7456.h)(0x547298A8)
-I (USER\osdvar.h)(0x54743D87)
-I (USER\utils.h)(0x5472B443)
-F (.\USER\osdvar.c)(0x54646461)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -W -O0 --apcs=interwork -I.\CORE -I.\STM32F10x_FWLib\inc -I.\MAVLINK -I.\MAVLINK\include\mavlink\v1.0 -I.\MAVLINK\include\mavlink\v1.0\ardupilotmega -I.\MAVLINK\include\mavlink\v1.0\common -I.\USER-I G:\Proj\STM32F103OSD\RTE-I d:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I d:\Keil_v5\ARM\CMSIS\Include-DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\osdvar.o --omf_browse .\objects\osdvar.crf --depend .\objects\osdvar.d)
-I (USER\osdvar.h)(0x54743D87)
-I (USER\definitions.h)(0x547150A6)
-I (USER\stm32f10x.h)(0x4D783CB4)
-I (.\CORE\core_cm3.h)(0x4D523B58)
-I (d:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x54199D7A)
-I (USER\system_stm32f10x.h)(0x4D783CAA)
-I (USER\stm32f10x_conf.h)(0x5461C641)
-I (.\STM32F10x_FWLib\inc\stm32f10x_dbgmcu.h)(0x4D783BB4)
-I (.\USER\stm32f10x.h)(0x4D783CB4)
-I (.\STM32F10x_FWLib\inc\stm32f10x_gpio.h)(0x5470A82B)
-I (.\STM32F10x_FWLib\inc\stm32f10x_rcc.h)(0x4D783BB4)
-I (.\STM32F10x_FWLib\inc\stm32f10x_spi.h)(0x4D783BB4)
-I (.\STM32F10x_FWLib\inc\stm32f10x_usart.h)(0x5051A0AE)
-I (.\STM32F10x_FWLib\inc\misc.h)(0x4D783BB4)
