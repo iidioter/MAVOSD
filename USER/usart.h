@@ -3,6 +3,9 @@
 
 #include "definitions.h"
 
+#define USART_FONT_RX_BUF_LEN  	1000
+extern u8  USART_FONT_RX_BUF[USART_FONT_RX_BUF_LEN];
+
 enum MAVBUF_STATE
 {
 	USART_MAVBUF_RDYRECV,

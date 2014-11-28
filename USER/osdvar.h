@@ -62,6 +62,9 @@ extern u16			font_count;
 extern u8			character_bitmap[0x40];
 extern u8			character_bitmap2[0x40];
 extern u8			font_uploading;
+extern u16			byte_count;
+extern u8 			bit_count;
+extern u8 			ascii_binary[0x08];
 
 /////////////////////////////////////////////////////////////////////////
 extern uint8_t		_panSpeed_XY[2];

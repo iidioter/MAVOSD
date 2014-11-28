@@ -21,6 +21,11 @@
  ****************************************************************************/
 
 #include "usart.h"
+#include "osdvar.h"
+#include "OSDMavlink.h"
+
+u8 USART_RX_BUF[USART_FONT_RX_BUF_LEN];
+u16 recvPos = 0;
 
 MAVLINK_BUFDef mavlink_buf[10] = {
 	{USART_MAVBUF_RDYRECV, 0,""},
@@ -131,7 +136,30 @@ void USART1_IRQHandler(void)
 	{
 		//read recv data
 		c =USART_ReceiveData(USART2);
+		
+		//process font uploading
+		if (font_uploading == 0) 
+		{
+			if (c == '*') font_uploading = 1;
+		}
+		else if(font_uploading == 1)
+		{
+			if (c == '*') font_uploading = 0;
+		}
 
+		if(font_uploading == 1)
+		{
+			uploadFont(c);
+		}
+		else
+		{
+			USART_RX_BUF[recvPos] = c;
+			recvPos++;
+			if(recvPos > 999)
+				recvPos = 0;
+		}
+		
+		//Process mavlink msg
 		if(c == 0xFE)	//Denotes the start of mavlink message frame transmission
 		{
 			if(last_mav_recv_buf_index != -1)

@@ -73,13 +73,16 @@ uint16_t     osd_chan7_raw = 1000;
 uint16_t     osd_chan8_raw = 1000;
 uint8_t      osd_rssi = 0; //raw value from mavlink
 
-/////////////////////////////////////////////////////////////////////////
+/////////////////used for font loading//////////////////////////////////
 u8			request_next_font=0;
 u8			cur_recv_buf_index=0;
 u16			font_count = 0;
 u8			character_bitmap[0x40];
 u8			character_bitmap2[0x40];
 u8			font_uploading = 0;
+u16			byte_count;
+u8 			bit_count;
+u8 			ascii_binary[0x08];
 
 /////////////////////////////////////////////////////////////////////////
 uint8_t		_panSpeed_XY[2] = {1, 8};

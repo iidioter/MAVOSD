@@ -24,6 +24,7 @@
 #include "max7456.h"
 #include "osdvar.h"
 #include "utils.h"
+#include "systick.h"
 
 mavlink_message_t msg; 
 mavlink_status_t status;
@@ -78,7 +79,7 @@ void process_mavlink2()
 						apm_mav_component = msg.compid;
 						apm_mav_type      = mavlink_msg_heartbeat_get_type(&msg);            
 
-//						lastMAVBeat = sys_tick_ms;
+						lastMAVBeat = micros();
 						if(waitingMAVBeats == 1){
 							enable_mav_request = 1;
 						}
@@ -163,67 +164,67 @@ void process_mavlink2()
 
 void uploadFont(u8 incomingByte)
 {
-//	if(incomingByte == 0x0d)
-//	{
-//		if (bit_count == 8 && (ascii_binary[0] == 0x30 || ascii_binary[0] == 0x31))
-//		{
-//			u8 ascii_byte;
+	if(incomingByte == 0x0d)
+	{
+		if (bit_count == 8 && (ascii_binary[0] == 0x30 || ascii_binary[0] == 0x31))
+		{
+			u8 ascii_byte;
 
-//            ascii_byte = 0;
+            ascii_byte = 0;
 
-//			if (ascii_binary[0] == 0x31) // ascii '1'
-//				ascii_byte = ascii_byte + 128;
+			if (ascii_binary[0] == 0x31) // ascii '1'
+				ascii_byte = ascii_byte + 128;
 
-//			if (ascii_binary[1] == 0x31)
-//				ascii_byte = ascii_byte + 64;
+			if (ascii_binary[1] == 0x31)
+				ascii_byte = ascii_byte + 64;
 
-//			if (ascii_binary[2] == 0x31)
-//				ascii_byte = ascii_byte + 32;
+			if (ascii_binary[2] == 0x31)
+				ascii_byte = ascii_byte + 32;
 
-//			if (ascii_binary[3] == 0x31)
-//				ascii_byte = ascii_byte + 16;
+			if (ascii_binary[3] == 0x31)
+				ascii_byte = ascii_byte + 16;
 
-//			if (ascii_binary[4] == 0x31)
-//				ascii_byte = ascii_byte + 8;
+			if (ascii_binary[4] == 0x31)
+				ascii_byte = ascii_byte + 8;
 
-//			if (ascii_binary[5] == 0x31)
-//				ascii_byte = ascii_byte + 4;
+			if (ascii_binary[5] == 0x31)
+				ascii_byte = ascii_byte + 4;
 
-//			if (ascii_binary[6] == 0x31)
-//				ascii_byte = ascii_byte + 2;
+			if (ascii_binary[6] == 0x31)
+				ascii_byte = ascii_byte + 2;
 
-//			if (ascii_binary[7] == 0x31)
-//				ascii_byte = ascii_byte + 1;
-//				
-//			if(cur_recv_buf_index == 0)
-//				character_bitmap[byte_count] = ascii_byte;
-//			else
-//				character_bitmap2[byte_count] = ascii_byte;
-//			
-//			byte_count++;
-//			bit_count = 0;
-//		}
-//		else
-//		{
-//			bit_count = 0;
-//		}
-//	}
-//	else if (incomingByte == 0x30 || incomingByte == 0x31)
-//	{
-//		ascii_binary[bit_count] = incomingByte;
-//		bit_count++;
-//	}
+			if (ascii_binary[7] == 0x31)
+				ascii_byte = ascii_byte + 1;
+				
+			if(cur_recv_buf_index == 0)
+				character_bitmap[byte_count] = ascii_byte;
+			else
+				character_bitmap2[byte_count] = ascii_byte;
+			
+			byte_count++;
+			bit_count = 0;
+		}
+		else
+		{
+			bit_count = 0;
+		}
+	}
+	else if (incomingByte == 0x30 || incomingByte == 0x31)
+	{
+		ascii_binary[bit_count] = incomingByte;
+		bit_count++;
+	}
 	
-//	if(byte_count == 64)
-//	{
-//		byte_count = 0;
-//		
-//		request_next_font = 1;
-//		
-//		//change recv buf
-//		if(cur_recv_buf_index == 0)
-//			cur_recv_buf_index = 1;
-//		else
-//			cur_recv_buf_index = 0;
-//	}
+	if(byte_count == 64)
+	{
+		byte_count = 0;
+		
+		request_next_font = 1;
+		
+		//change recv buf
+		if(cur_recv_buf_index == 0)
+			cur_recv_buf_index = 1;
+		else
+			cur_recv_buf_index = 0;
+	}
 }
