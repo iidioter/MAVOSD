@@ -1,4 +1,4 @@
-MAVOSD - A OSD for autopilot which supports mavlink protocol
+MAVOSD - An OSD module compatible with autopilots using MAVLINK protocol. 
 www.playuav.com
 ======
 
