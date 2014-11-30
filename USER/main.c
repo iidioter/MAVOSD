@@ -32,6 +32,9 @@
 #include "systick.h"
 
 uint8_t io_redirect = IO_REDIRECT_USART;
+u32 app_start_time;
+//u8 should_process_font_upload;
+
 //redirect IO output
 int fputc(int ch, FILE *f)
 {
@@ -69,10 +72,11 @@ void setup(void)
 int main(void)
 {
 	setup();
+	app_start_time = millis();
 	
 //	SPI_MAX7456_setPanel(10, 3);
 //	SPI_MAX7456_openPanel();
-//	printf("%c%c%c|%c%c%c", 0x30, 0x31, 0x32, 0x33, 0x34, 0x35);
+//	printf("%c%c|%c%c", 0x90, 0x91, 0x92, 0x93);
 //	SPI_MAX7456_closePanel();
 	
 	while(1)
@@ -89,8 +93,13 @@ int main(void)
 			request_next_font = 0;
 		}
 		
+		//if we are uploading font, we do not need to do other thing
+		if(font_uploading == 1)
+			continue;
+		
 		if(enable_mav_request == 1)
-		{//Request6 rate control
+		{
+			//Request6 rate control
 			SPI_MAX7456_clear();
 			SPI_MAX7456_setPanel(10, 3);
 			SPI_MAX7456_openPanel();

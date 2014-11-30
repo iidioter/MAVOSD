@@ -508,6 +508,11 @@
               <FileType>1</FileType>
               <FilePath>.\USER\osdvar.c</FilePath>
             </File>
+            <File>
+              <FileName>panel.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\USER\panel.c</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>

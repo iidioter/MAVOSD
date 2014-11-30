@@ -24,27 +24,20 @@
 #include "osdvar.h"
 #include "OSDMavlink.h"
 
-u8 USART_RX_BUF[USART_FONT_RX_BUF_LEN];
-u16 recvPos = 0;
-
-MAVLINK_BUFDef mavlink_buf[10] = {
-	{USART_MAVBUF_RDYRECV, 0,""},
-	{USART_MAVBUF_RDYRECV, 0,""},
-	{USART_MAVBUF_RDYRECV, 0,""},
-	{USART_MAVBUF_RDYRECV, 0,""},
-	{USART_MAVBUF_RDYRECV, 0,""},
-	{USART_MAVBUF_RDYRECV, 0,""},
-	{USART_MAVBUF_RDYRECV, 0,""},
-	{USART_MAVBUF_RDYRECV, 0,""},
-	{USART_MAVBUF_RDYRECV, 0,""},
-	{USART_MAVBUF_RDYRECV, 0,""},
-};
+MAVLINK_BUFDef mavlink_buf[10];
 int8_t cur_mav_recv_buf_index = -1;
 int8_t last_mav_recv_buf_index = -1;
 u8 max_mav_msg_length = 0;
 
 void usart_init(u32 bound)
 {
+	//init the mavlink recv buf
+	for(u8 i=0; i<MAV_BUF_COUNT; i++)
+	{
+		mavlink_buf[i].buf_state = USART_MAVBUF_RDYRECV;
+		mavlink_buf[i].buf_length = 0;
+	}
+	
 	USART_InitTypeDef USART_InitStructure;
 	NVIC_InitTypeDef NVIC_InitStructure;
 	
@@ -53,14 +46,13 @@ void usart_init(u32 bound)
 	//reset USART2
 	USART_DeInit(USART2);
 	
-	//Usart1 NVIC config
+	//Usart2 NVIC config
     NVIC_InitStructure.NVIC_IRQChannel = USART2_IRQn;
 	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority=3 ;//抢占优先级3
 	NVIC_InitStructure.NVIC_IRQChannelSubPriority = 3;		//子优先级3
 	NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;			//IRQ通道使能
 	NVIC_Init(&NVIC_InitStructure);
 	
-	//RCC_USARTCLKConfig( RCC_USART1CLK_PCLK );
 	//USART init
 	USART_InitStructure.USART_BaudRate = bound;
 	USART_InitStructure.USART_WordLength = USART_WordLength_8b;
@@ -127,8 +119,8 @@ int8_t usart_available_packet_to_recv(void)
 	return -1;
 }
 
-//USART1 interrupt process
-void USART1_IRQHandler(void) 
+//USART2 interrupt process
+void USART2_IRQHandler(void) 
 {
 	u8 c;
 	
@@ -140,24 +132,27 @@ void USART1_IRQHandler(void)
 		//process font uploading
 		if (font_uploading == 0) 
 		{
-			if (c == '*') font_uploading = 1;
+			if (c == '*')
+			{
+				font_uploading = 1;
+				return;
+			}
+			
 		}
 		else if(font_uploading == 1)
 		{
-			if (c == '*') font_uploading = 0;
+			if (c == '*') 
+			{
+				font_uploading = 0;
+				return;
+			}
 		}
 
 		if(font_uploading == 1)
 		{
 			uploadFont(c);
 		}
-		else
-		{
-			USART_RX_BUF[recvPos] = c;
-			recvPos++;
-			if(recvPos > 999)
-				recvPos = 0;
-		}
+
 		
 		//Process mavlink msg
 		if(c == 0xFE)	//Denotes the start of mavlink message frame transmission
