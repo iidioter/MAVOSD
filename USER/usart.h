@@ -3,9 +3,6 @@
 
 #include "definitions.h"
 
-#define USART_FONT_RX_BUF_LEN  	1000
-extern u8  USART_FONT_RX_BUF[USART_FONT_RX_BUF_LEN];
-
 enum MAVBUF_STATE
 {
 	USART_MAVBUF_RDYRECV,
@@ -22,7 +19,8 @@ typedef struct
 
 }MAVLINK_BUFDef;
 
-extern MAVLINK_BUFDef mavlink_buf[10]; 
+#define MAV_BUF_COUNT 	10
+extern MAVLINK_BUFDef mavlink_buf[MAV_BUF_COUNT]; 
 extern int8_t cur_mav_recv_buf_index;
 extern int8_t last_mav_recv_buf_index;
 extern u8 max_mav_msg_length;
