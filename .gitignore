@@ -1,0 +1,7 @@
+*~
+*.build_log.htm
+*.uvguix.Administrator
+*.uvoptx
+*.uvprojx
+/Objects/*
+Thumbs.db
