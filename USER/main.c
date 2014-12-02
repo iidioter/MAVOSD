@@ -30,6 +30,7 @@
 #include "osdvar.h"
 #include "OSDMavlink.h"
 #include "systick.h"
+#include "panel.h"
 
 uint8_t io_redirect = IO_REDIRECT_USART;
 u32 app_start_time;
@@ -74,28 +75,30 @@ int main(void)
 	setup();
 	app_start_time = millis();
 	
-//	SPI_MAX7456_setPanel(10, 3);
-//	SPI_MAX7456_openPanel();
-//	printf("%c%c|%c%c", 0x90, 0x91, 0x92, 0x93);
-//	SPI_MAX7456_closePanel();
+	SPI_MAX7456_setPanel(10, 3);
+	SPI_MAX7456_openPanel();
+	printf("%c%c|%c%c", 0x30, 0x31, 0x92, 0x93);
+	SPI_MAX7456_closePanel();
 	
 	while(1)
 	{
-		//we have received one font, write to max7456 NVM and send response to sender
-		if(request_next_font == 1)
-		{
-			if(cur_recv_buf_index == 0)
-				SPI_MAX7456_write_NVM(font_count, character_bitmap2);
-			else
-				SPI_MAX7456_write_NVM(font_count, character_bitmap);
-			font_count++;
-			printf("Char Done\n");
-			request_next_font = 0;
-		}
-		
-		//if we are uploading font, we do not need to do other thing
-		if(font_uploading == 1)
-			continue;
+//		//we have received one font, write to max7456 NVM and send response to sender
+//		if(request_next_font == 1)
+//		{
+//			if(cur_recv_buf_index == 0)
+//				SPI_MAX7456_write_NVM(font_count, character_bitmap2);
+//			else
+//				SPI_MAX7456_write_NVM(font_count, character_bitmap);
+//			font_count++;
+//			printf("Char Done\n");
+//			request_next_font = 0;
+//		}
+//		
+//		//if we are uploading font, we do not need to do other thing
+//		if(font_uploading == 1)
+//		{
+//			continue;
+//		}
 		
 		if(enable_mav_request == 1)
 		{
@@ -114,17 +117,19 @@ int main(void)
 			Delay_ms(50);
 			SPI_MAX7456_clear();
 			waitingMAVBeats = 0;
-			lastMAVBeat = micros();
-			lastWritePanel = micros();
+			lastMAVBeat = millis();
+			lastWritePanel = millis();
 		}
 
 		//read_mavlink();
 		process_mavlink2();
 
-		if((lastWritePanel+50) > micros())
+		u32 tmp1 =  lastWritePanel+50;
+		u32 tmp2 = millis();
+		if((lastWritePanel+50) > millis())
 		{
-			//writePanels();
-			lastWritePanel = micros();
+			writePanels();
+			lastWritePanel = millis();
 		}
 		
 //		LED_ON;

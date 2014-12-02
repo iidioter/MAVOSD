@@ -52,4 +52,11 @@ void GPIO_Config(void)  //Configures GPIO
 	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
 	GPIO_Init(MAX7456_SPI_PORT, &GPIO_InitStructure);
 	GPIO_SetBits(MAX7456_SPI_PORT,MAX7456_SPI_PIN);
+	
+//	//USB IO test
+//	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_11 | GPIO_Pin_12;
+//	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
+//	GPIO_Init(GPIOA, &GPIO_InitStructure);
+//	GPIO_ResetBits(GPIOA,GPIO_Pin_11);
+//	GPIO_ResetBits(GPIOA,GPIO_Pin_12);
 }
