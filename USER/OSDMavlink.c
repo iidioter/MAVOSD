@@ -79,7 +79,7 @@ void process_mavlink2()
 						apm_mav_component = msg.compid;
 						apm_mav_type      = mavlink_msg_heartbeat_get_type(&msg);            
 
-						lastMAVBeat = millis();
+						lastMAVBeat = sys_tick_ms;
 						if(waitingMAVBeats == 1){
 							enable_mav_request = 1;
 						}

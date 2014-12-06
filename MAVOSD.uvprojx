@@ -513,6 +513,11 @@
               <FileType>1</FileType>
               <FilePath>.\USER\panel.c</FilePath>
             </File>
+            <File>
+              <FileName>font.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\USER\font.c</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>

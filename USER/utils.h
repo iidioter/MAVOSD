@@ -8,8 +8,8 @@ void LEDtoggle(void);
 
 void Blink(void);
 
-void Delay_ms(unsigned int ms);
-void Delay_us(unsigned int us);
+//void Delay_ms(unsigned int ms);
+//void Delay_us(unsigned int us);
 
 float Rad2Deg(float x);
 float Deg2Rad(float x);

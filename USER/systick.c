@@ -1,96 +1,34 @@
-/****************************************************************************
- *
- *   Copyright (c) 2014-2014 PlayUAV Development Team. All rights reserved.
- *
- * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions
- * are met:
- *
- * 1. Redistributions of source code must retain the above copyright
- *    notice, this list of conditions and the following disclaimer.
- * 2. Redistributions in binary form must reproduce the above copyright
- *    notice, this list of conditions and the following disclaimer in
- *    the documentation and/or other materials provided with the
- *    distribution.
- * 3. Neither the name PlayUAV nor the names of its contributors may be
- *    used to endorse or promote products derived from this software
- *    without specific prior written permission.
- *
- * You should have received a copy of the GNU General Public License
- * along with PlayUAV  If not, see <http://www.gnu.org/licenses/>.
- ****************************************************************************/
+#include "systick.h"
 
-#include "stm32f10x_tim.h"
 
-static volatile uint32_t sysTickMillis = 0;
-static uint32_t sysTickPerUs = 72;
+volatile u32 sys_tick_ms = 0;
 
-static inline int systick_check_underflow(void)
+void systick_init()
 {
-    return SysTick->CTRL & SysTick_CTRL_COUNTFLAG_Msk;
+	SysTick_CLKSourceConfig(SysTick_CLKSource_HCLK_Div8);
+	SysTick->CTRL |= (1<<1);  	//中断使能
+	SysTick->VAL=0X00;            //当前数值寄存器清零，并清除溢出标志位
+	SysTick->LOAD=0X2328;     //计数器赋初值
+	SysTick->CTRL |= (1<<0);     //开启计数器
 }
 
-///////////////////////////////////////////////////////////////////////////////
-// System Time in Microseconds
-///////////////////////////////////////////////////////////////////////////////
-
-unsigned int micros(void)
+void Delay_ms(u16 nms)
 {
-    uint32_t cycle, timeMs;
-
-    do
-    {
-        timeMs = sysTickMillis;
-        cycle = SysTick->VAL;
-        __asm volatile("nop");
-        __asm volatile("nop");
-    }
-    while (timeMs != sysTickMillis);
-
-    if (systick_check_underflow())
-    {
-        timeMs++;
-        cycle = SysTick->VAL;
-    }
-
-    return (timeMs * 1000) + (SysTick->LOAD + 1 - cycle) / sysTickPerUs;
+	u32 now = sys_tick_ms;
+	while( sys_tick_ms < (now+nms));
 }
-
-///////////////////////////////////////////////////////////////////////////////
-// System Time in Milliseconds
-///////////////////////////////////////////////////////////////////////////////
-
-unsigned int millis(void)
-{
-    return sysTickMillis;
-}
-
-///////////////////////////////////////////////////////////////////////////////
-// SysTick
-///////////////////////////////////////////////////////////////////////////////
-static void (*systickUserCallback)(void);
 
 void SysTick_Handler(void)
 {
-    __disable_irq();
-    systick_check_underflow();
-    sysTickMillis++;
-    __enable_irq();
-
-    if (systickUserCallback)
-    {
-        systickUserCallback();
-    }
+	sys_tick_ms++;
 }
 
-void SysTickAttachCallback(void (*callback)(void))
-{
-    systickUserCallback = callback;
-}
-
-void InitSysTick(void)
-{
-    sysTickPerUs = SystemCoreClock / 1000000;
-    SysTick_Config(SystemCoreClock / 1000);
-    //NVIC_SetPriority(SysTick_IRQn, 0);//set systick interrupt priority, 0 is the highest for all
+void Delay_us(u32 nus)
+{		
+	u16 i=0;
+	while(nus--)
+	{
+		i=6;
+		while(i--);
+	}
 }

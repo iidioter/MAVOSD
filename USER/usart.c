@@ -129,29 +129,29 @@ void USART2_IRQHandler(void)
 		//read recv data
 		c =USART_ReceiveData(USART2);
 		
-//		//process font uploading
-//		if (font_uploading == 0) 
-//		{
-//			if (c == '*')
-//			{
-//				font_uploading = 1;
-//				return;
-//			}
-//			
-//		}
-//		else if(font_uploading == 1)
-//		{
-//			if (c == '*') 
-//			{
-//				font_uploading = 0;
-//				return;
-//			}
-//		}
+		//process font uploading
+		if (font_uploading == 0) 
+		{
+			if (c == '*')
+			{
+				font_uploading = 1;
+				return;
+			}
+			
+		}
+		else if(font_uploading == 1)
+		{
+			if (c == '*') 
+			{
+				font_uploading = 0;
+				return;
+			}
+		}
 
-//		if(font_uploading == 1)
-//		{
-//			uploadFont(c);
-//		}
+		if(font_uploading == 1)
+		{
+			uploadFont(c);
+		}
 
 		
 		//Process mavlink msg

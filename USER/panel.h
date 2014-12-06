@@ -3,7 +3,8 @@
 
 #include "definitions.h"
 
-void	writePanels(void);
+
+void writePanels(void);
 
 void panWaitMAVBeats(u8 first_col, u8 first_line);
 void showHorizon(uint8_t start_col, uint8_t start_row);

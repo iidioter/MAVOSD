@@ -9,13 +9,9 @@ u8			_lastHorizonColHit[12] = {9,9,9,9,9,9,9,9,9,9,9,9};
 u8			_lastHorizonRowHit[12] = {6,6,6,6,6,6,6,6,6,6,6,6};
 u8			_HorizonHitIndex = 0;
 
-void initPanel()
-{
-}
-
 void writePanels(void)
 {
-	if(millis() < (lastMAVBeat + 2200))
+	if(sys_tick_ms < (lastMAVBeat + 2200))
 	{
 		SPI_MAX7456_setPanel(_panHorizon_XY[0], _panHorizon_XY[1]);
 		SPI_MAX7456_openPanel();
@@ -117,3 +113,4 @@ void printHit(uint8_t col, uint8_t row, uint8_t subval)
 	u8 subval_char = 0x05 + subval;
 	SPI_MAX7456_writeSingle(col, row, subval_char);
 }
+

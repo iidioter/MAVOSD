@@ -32,17 +32,17 @@ void LEDtoggle(void)
     __enable_irq();
 }
 
-void Delay_us(unsigned int us)
-{
-    us *= STM32_DELAY_US_MULT;
+//void Delay_us(unsigned int us)
+//{
+//    us *= STM32_DELAY_US_MULT;
 
-		while(us--);
-}
+//		while(us--);
+//}
 
-void Delay_ms(unsigned int ms)
-{
-    Delay_us(1000 * ms);
-}
+//void Delay_ms(unsigned int ms)
+//{
+//    Delay_us(1000 * ms);
+//}
 
 float Rad2Deg(float x)
 {

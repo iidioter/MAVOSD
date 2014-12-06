@@ -87,6 +87,7 @@ void 	SPI_MAX7456_setMode(int mode);
 void 	SPI_MAX7456_control(u8 ctrl);
 void	SPI_MAX7456_write(u8 c);
 void 	SPI_MAX7456_write_NVM(u32 font_count, uint8_t *character_bitmap);
+void 	SPI_MAX7456_reset(void);
 
 //test function
 void	read_one_char_from_NVM(u32 font_count);

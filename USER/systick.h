@@ -1,8 +1,15 @@
 #ifndef SYSTICK_H_
 #define SYSTICK_H_
 
-void InitSysTick(void);
-void SysTickAttachCallback(void (*callback)(void));
-unsigned int millis(void);
-unsigned int micros(void);
+#include "definitions.h"
+
+
+extern volatile u32 sys_tick_ms;
+
+void	systick_init(void);
+void 	Delay_ms(u16 nms);
+
+//use loop to simulate us delay, not accuracy
+void 	Delay_us(u32 nus);
+
 #endif /* SYSTICK_H_ */

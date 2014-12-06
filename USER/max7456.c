@@ -22,7 +22,7 @@
 
 #include "max7456.h" 
 #include "spi.h"
-#include "utils.h"   
+#include "systick.h"   
 
 
 u8 	max7456_startCol = 0;
@@ -76,6 +76,52 @@ void SPI_MAX7456_init(void)
 	// making sure the Max7456 is enabled
 	SPI_MAX7456_control(1);
 	SPI_MAX7456_clear();
+}  
+
+void SPI_MAX7456_reset(void)
+{	
+//	u8 osdbl_r = 0;
+//	u8 osdbl_w = 0;
+//	u32 x = 0;
+//	
+// 	MAX7456_CS_HIGH();
+
+//	SPI1_Init();
+//	
+//	//设置为18M时钟,高速模式
+//	//SPI1_SetSpeed(SPI_BaudRatePrescaler_2);
+//	
+//	SPI_MAX7456_detectMode();
+//	
+//	MAX7456_CS_LOW();
+
+//	//read black level register
+//	SPI1_TransferByte(MAX7456_OSDBL_reg_read);//black level read register
+//	osdbl_r = SPI1_TransferByte(0xff);
+//	MAX7456_CS_HIGH();
+//	Delay_us(100);
+//	
+//	MAX7456_CS_LOW();
+//	Delay_us(100);
+//	SPI1_TransferByte(MAX7456_VM0_reg);
+//	SPI1_TransferByte(MAX7456_RESET | max7456_videoMode);
+//	MAX7456_CS_HIGH();
+//	
+//	//set black level
+//	osdbl_w = (osdbl_r & 0xef); //Set bit 4 to zero 11101111
+//	SPI1_TransferByte(MAX7456_OSDBL_reg); //black level write register
+//	SPI1_TransferByte(osdbl_w);
+//	
+//	// set all rows to same charactor white level, 90%
+//	for (x = 0; x < MAX7456_screen_rows; x++)
+//	{
+//		SPI1_TransferByte(x + 0x10);
+//		SPI1_TransferByte(MAX7456_WHITE_level_120);
+//	}
+	// define sync (auto,int,ext) and
+	// making sure the Max7456 is enabled
+	SPI_MAX7456_control(1);
+//	SPI_MAX7456_clear();
 }  
 
 void SPI_MAX7456_control(u8 ctrl)
@@ -280,19 +326,20 @@ void read_one_char_from_NVM(u32 font_count)
 	MAX7456_CS_HIGH();
 	
 	// wait until bit 5 in the status register returns to 0 (12ms)
-	MAX7456_CS_LOW();
+	//MAX7456_CS_LOW();
 	while ((SPI1_TransferByte(MAX7456_STAT_reg_read) & STATUS_reg_nvr_busy) != 0x00);
-	MAX7456_CS_HIGH();
+	//MAX7456_CS_HIGH();
 	
 	for(x = 0; x < NVM_ram_size; x++) // write out 54 (out of 64) uint8_ts of character to shadow ram
 	{
 		MAX7456_CS_LOW();
 		SPI1_TransferByte(MAX7456_CMAL_reg); // set start address low
 		SPI1_TransferByte(x);
-		Delay_us(1);
+		Delay_us(20);
 		SPI1_TransferByte(MAX7456_CMDO_reg);
 		character_bitmap[x] = SPI1_TransferByte(0xff);
 		MAX7456_CS_HIGH();
+		Delay_us(20);
 	}
 
 	MAX7456_CS_LOW();

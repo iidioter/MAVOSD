@@ -31,6 +31,7 @@
 #include "OSDMavlink.h"
 #include "systick.h"
 #include "panel.h"
+#include "font.h"
 
 uint8_t io_redirect = IO_REDIRECT_USART;
 u32 app_start_time;
@@ -61,38 +62,78 @@ void Periph_clock_enable(void)
 
 void setup(void)
 {
-    InitSysTick();
+    systick_init();
 
     Periph_clock_enable();
     GPIO_Config();
 	
 	SPI_MAX7456_init();
 	usart_init(57600);
+	
+}
+
+void printALL(void)
+{
+	u8 i,j,k;
+	for(i=0; i<15; i++)
+	{
+		for(j=4; j<20; j++)
+		{
+			SPI_MAX7456_writeSingle(j, i, i*16+j-4);
+		}
+	}
 }
 
 int main(void)
 {
 	setup();
-	app_start_time = millis();
+	app_start_time = sys_tick_ms;
 	
-	SPI_MAX7456_setPanel(10, 3);
-	SPI_MAX7456_openPanel();
-	printf("%c%c|%c%c", 0x30, 0x31, 0x92, 0x93);
-	SPI_MAX7456_closePanel();
+	//initScale();
+	//printALL();
+	//read_one_char_from_NVM(1);
 	
+//	SPI_MAX7456_setPanel(10, 3);
+//	SPI_MAX7456_openPanel();
+//	printf("%c|%c|%c|%c|%c|%c", 0x9f, 0xaf, 0xbf, 0xcf, 0xDf, 0xEf);
+//	//printf("%c", 0xE0);
+//	SPI_MAX7456_closePanel();
+	u32 last_print_scale = sys_tick_ms;
+	u8 j=0x90;
+//	for(i=4; i<17; i++)
+//	{
+//		SPI_MAX7456_setPanel(i, 3);
+//		SPI_MAX7456_openPanel();
+//		printf("%c|%c|%c|%c", j, j+1, j+2, j+3);
+//		SPI_MAX7456_closePanel();
+//		j = j+4;
+//	}
+	SPI_MAX7456_clear();
 	while(1)
 	{
-//		//we have received one font, write to max7456 NVM and send response to sender
-//		if(request_next_font == 1)
-//		{
-//			if(cur_recv_buf_index == 0)
-//				SPI_MAX7456_write_NVM(font_count, character_bitmap2);
-//			else
-//				SPI_MAX7456_write_NVM(font_count, character_bitmap);
-//			font_count++;
-//			printf("Char Done\n");
-//			request_next_font = 0;
-//		}
+		if((last_print_scale+50000) > sys_tick_ms)
+		{
+			SPI_MAX7456_setPanel(10, 3);
+			SPI_MAX7456_openPanel();
+			printf("%c|%c|%c|%c", j, j+1, j+2, j+3);
+			SPI_MAX7456_closePanel();
+			j = j+4;
+			if(j > 192)
+				j = 0x90;
+			last_print_scale = sys_tick_ms;
+		}
+		
+		//we have received one font, write to max7456 NVM and send response to sender
+		if(request_next_font == 1)
+		{
+			if(cur_recv_buf_index == 0)
+				SPI_MAX7456_write_NVM(font_count, character_bitmap2);
+			else
+				SPI_MAX7456_write_NVM(font_count, character_bitmap);
+			font_count++;
+			printf("Char Done\n");
+			request_next_font = 0;
+		}
 //		
 //		//if we are uploading font, we do not need to do other thing
 //		if(font_uploading == 1)
@@ -100,44 +141,42 @@ int main(void)
 //			continue;
 //		}
 		
-		if(enable_mav_request == 1)
-		{
-			//Request6 rate control
-			SPI_MAX7456_clear();
-			SPI_MAX7456_setPanel(10, 3);
-			SPI_MAX7456_openPanel();
-			printf("Requesting DataStreams...");
-			SPI_MAX7456_closePanel();
+//		if(enable_mav_request == 1)
+//		{
+//			//Request6 rate control
+//			SPI_MAX7456_clear();
+//			SPI_MAX7456_setPanel(10, 3);
+//			SPI_MAX7456_openPanel();
+//			printf("Requesting DataStreams...");
+//			SPI_MAX7456_closePanel();
 
-			for(int n = 0; n < 3; n++){
-				request_mavlink_rates();//Three times to certify it will be readed
-				Delay_ms(50);
-			}
-			enable_mav_request = 0;
-			Delay_ms(50);
-			SPI_MAX7456_clear();
-			waitingMAVBeats = 0;
-			lastMAVBeat = millis();
-			lastWritePanel = millis();
-		}
+//			for(int n = 0; n < 3; n++){
+//				request_mavlink_rates();//Three times to certify it will be readed
+//				Delay_ms(50);
+//			}
+//			enable_mav_request = 0;
+//			Delay_ms(50);
+//			SPI_MAX7456_clear();
+//			waitingMAVBeats = 0;
+//			lastMAVBeat = sys_tick_ms;
+//			lastWritePanel = sys_tick_ms;
+//		}
 
-		//read_mavlink();
-		process_mavlink2();
+//		//read_mavlink();
+//		process_mavlink2();
 
-		u32 tmp1 =  lastWritePanel+50;
-		u32 tmp2 = millis();
-		if((lastWritePanel+50) > millis())
-		{
-			writePanels();
-			lastWritePanel = millis();
-		}
-		
+//		if((lastWritePanel+100) > sys_tick_ms)
+//		{
+//			writePanels();
+//			lastWritePanel = sys_tick_ms;
+//		}
+//		
 //		LED_ON;
 //		//printf("LEDON\r\n");
 //		Delay_us(1000000);
 //		//printf("LEDOFF\r\n");
 //		LED_OFF;
-//		Delay_us(1000000);
+//		Delay_ms(1000);
 	}
 }
 
